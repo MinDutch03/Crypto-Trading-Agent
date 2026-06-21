@@ -1,9 +1,19 @@
 # Sentinel Desk — a multi-agent crypto trading desk you can actually trust with money
 
+![Sentinel Desk](docs/cover.png)
+
 ### A Google ADK trading agent for Binance, where every order must clear a deterministic risk gate and lands in a tamper-evident audit log.
 
 > **Track:** Agents for Business — there is cost and revenue on the line.
 > **Trading mode:** orders execute on the **Binance Spot Testnet** (fake funds); real, live Binance data drives the analysis. No real money is ever at risk.
+
+---
+
+## 🎥 Demo video
+
+[![Watch the Sentinel Desk demo](docs/thumbnail.png)](https://github.com/MinDutch03/Crypto-Trading-Agent/raw/main/docs/demo.mp4)
+
+A **2:46** narrated walkthrough (male voiceover): the problem, the multi-agent architecture, a live guarded trade on the testnet, the risk guard rejecting bad orders, the tamper-evident audit log, and one-command deployment. *(Click the thumbnail; plays once the video lands on `main`.)*
 
 ---
 
