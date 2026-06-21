@@ -7,6 +7,16 @@
 
 ---
 
+## 🎥 Demo video
+
+https://github.com/MinDutch03/Crypto-Trading-Agent/raw/main/docs/demo.mp4
+
+A **2:46** narrated walkthrough (male voiceover, well under the 5-minute limit): the problem, the multi-agent architecture, a live guarded trade on the testnet, the deterministic risk guard rejecting bad orders, the tamper-evident audit log, and one-command deployment.
+
+▶ **[Watch `docs/demo.mp4`](docs/demo.mp4)** — the inline player above appears once this lands on `main`.
+
+---
+
 ## The problem
 
 "Let an LLM trade crypto for me" is equal parts exciting and terrifying. The exciting part is obvious: a tireless analyst that reads the order book, reasons about momentum, and acts in seconds. The terrifying part is just as obvious: **an LLM is non-deterministic, and money is very deterministic.** A hallucinated quantity, a misread ticker, a prompt injection buried in a news headline, or simply an over-eager model can drain an account in one bad tool call.
