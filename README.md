@@ -66,7 +66,7 @@ Each agent connects to the MCP server with a **`tool_filter`** so it sees only t
 | **Agent / Multi-agent system (ADK)** | `src/trading_agent/agents/` — coordinator + 3 specialists; both an LLM-delegation `LlmAgent` root and a deterministic `SequentialAgent` pipeline |
 | **MCP Server** | `src/trading_agent/binance_mcp/server.py` — FastMCP server exposing Binance as tools over stdio |
 | **Security features** | Two-client isolation, `RiskGuard` hard limits, hash-chained `AuditLog`, per-agent `tool_filter`, secrets only in `config.py`, non-root container |
-| **Deployability** | `Dockerfile` + `docker-compose.yml` (serves the ADK web UI), GitHub Actions CI (lint + tests + image build), `Makefile` |
+| **Deployability** | `Dockerfile` + `docker-compose.yml` (serves the ADK web UI), GitHub Actions **CI** (lint + tests + image build) and **CD** (builds and publishes the image to GHCR on push to `main` / tags), `Makefile` |
 
 ## Security model in detail
 
@@ -111,6 +111,15 @@ make web        # http://localhost:8000
 ### Run with Docker
 ```bash
 docker compose up --build       # ADK web UI on http://localhost:8000
+```
+
+### Deploy (CD)
+Every push to `main` (and every `v*` tag) triggers the **CD** workflow, which
+builds the image and publishes it to the GitHub Container Registry. Deploy it
+anywhere Docker runs:
+```bash
+docker run --env-file .env -p 8000:8000 \
+  ghcr.io/mindutch03/crypto-trading-agent:latest
 ```
 
 ### Run the MCP server standalone
