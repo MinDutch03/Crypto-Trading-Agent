@@ -13,7 +13,7 @@
 
 [![Watch the Sentinel Desk demo](docs/thumbnail.png)](https://github.com/MinDutch03/Crypto-Trading-Agent/raw/main/docs/demo.mp4)
 
-A **2:46** narrated walkthrough (male voiceover): the problem, the multi-agent architecture, a live guarded trade on the testnet, the risk guard rejecting bad orders, the tamper-evident audit log, and one-command deployment. *(Click the thumbnail; plays once the video lands on `main`.)*
+A **2:46** narrated walkthrough (male voiceover, well under the 5-minute limit): the problem, the multi-agent architecture, a live guarded trade on the testnet, the deterministic risk guard rejecting bad orders, the tamper-evident audit log, and one-command deployment. *(Click the thumbnail to play.)*
 
 ---
 
