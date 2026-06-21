@@ -1,0 +1,18 @@
+services:
+  trading-agent:
+    build: .
+    image: crypto-trading-agent:latest
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"  # ADK web dev UI
+    volumes:
+      # Persist the tamper-evident audit log and risk-state across restarts.
+      - ./audit:/app/audit
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
