@@ -7,6 +7,25 @@
 
 ---
 
+## 🎥 Demo video
+
+[![Sentinel Desk demo](https://img.shields.io/badge/▶_Watch_the_demo-≤5_min-e11d48?style=for-the-badge)](REPLACE_WITH_VIDEO_URL)
+
+> **Replace `REPLACE_WITH_VIDEO_URL`** with your YouTube/Loom link after uploading.
+
+A 5-minute walkthrough: the problem, the multi-agent architecture, a live guarded
+trade on the testnet, the deterministic risk guard rejecting bad orders, the
+tamper-evident audit log, and one-command deployment.
+
+**Reproduce the demo yourself:**
+```bash
+make demo        # runs the recordable showcase with pauses between scenes
+make voiceover   # generates the male-voice narration track (macOS `say`)
+```
+Full narration + scene-by-scene storyboard: **[docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md)**.
+
+---
+
 ## The problem
 
 "Let an LLM trade crypto for me" is equal parts exciting and terrifying. The exciting part is obvious: a tireless analyst that reads the order book, reasons about momentum, and acts in seconds. The terrifying part is just as obvious: **an LLM is non-deterministic, and money is very deterministic.** A hallucinated quantity, a misread ticker, a prompt injection buried in a news headline, or simply an over-eager model can drain an account in one bad tool call.

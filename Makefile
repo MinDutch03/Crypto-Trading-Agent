@@ -1,4 +1,4 @@
-.PHONY: help install test lint mcp web run docker-build docker-up docker-down
+.PHONY: help install test lint mcp web run demo voiceover docker-build docker-up docker-down
 
 help:
 	@echo "Targets:"
@@ -8,6 +8,8 @@ help:
 	@echo "  mcp          Run the Binance MCP server (stdio)"
 	@echo "  web          Run the ADK web dev UI on :8000"
 	@echo "  run PROMPT=  Run the desk on a prompt (e.g. make run PROMPT='price of BTCUSDT')"
+	@echo "  demo         Run the recordable demo (scripts/demo.sh)"
+	@echo "  voiceover    Generate the male-voice narration track (scripts/voiceover.sh)"
 	@echo "  docker-build Build the Docker image"
 	@echo "  docker-up    docker compose up (ADK web UI on :8000)"
 	@echo "  docker-down  docker compose down"
@@ -29,6 +31,12 @@ web:
 
 run:
 	trading-agent "$(PROMPT)"
+
+demo:
+	./scripts/demo.sh
+
+voiceover:
+	./scripts/voiceover.sh
 
 docker-build:
 	docker compose build

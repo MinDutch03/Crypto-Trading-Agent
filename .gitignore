@@ -26,6 +26,13 @@ logs/
 *.db
 *.sqlite3
 
+# Generated demo media (reproducible via scripts/voiceover.sh; videos are hosted)
+docs/voiceover/*.aiff
+docs/voiceover/*.m4a
+docs/voiceover/*.mp3
+*.mp4
+*.mov
+
 # OS / editor
 .DS_Store
 .idea/
