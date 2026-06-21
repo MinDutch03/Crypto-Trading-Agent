@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crypto-trading-agent"
+version = "0.1.0"
+description = "Multi-agent Binance trading system built on Google ADK with an MCP server and a hard risk-limit security layer."
+requires-python = ">=3.11"
+dependencies = [
+    "google-adk>=2.0.0",
+    "python-binance>=1.0.19",
+    "mcp>=1.2.0",
+    "pydantic>=2.6",
+    "pydantic-settings>=2.2",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+binance-mcp = "trading_agent.binance_mcp.server:main"
+trading-agent = "trading_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
