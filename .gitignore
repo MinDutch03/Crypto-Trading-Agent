@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment & secrets — NEVER commit real keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Runtime artifacts
+audit/*.log
+audit/*.jsonl
+logs/
+*.db
+*.sqlite3
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

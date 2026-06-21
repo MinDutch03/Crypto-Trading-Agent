@@ -1,0 +1,13 @@
+# --- Agent layer (Google ADK 2.0) ---
+google-adk>=2.0.0
+
+# --- Binance connectivity ---
+python-binance>=1.0.19
+
+# --- MCP server / protocol ---
+mcp>=1.2.0
+
+# --- Config & validation ---
+pydantic>=2.6
+pydantic-settings>=2.2
+python-dotenv>=1.0
