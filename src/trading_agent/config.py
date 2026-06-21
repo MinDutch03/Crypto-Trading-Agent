@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from functools import lru_cache
 
+from dotenv import load_dotenv
 from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -56,5 +57,11 @@ class Settings(BaseSettings):
 
 @lru_cache
 def get_settings() -> Settings:
-    """Return a cached Settings instance (read env once per process)."""
+    """Return a cached Settings instance (read env once per process).
+
+    We also load `.env` into the process environment so that libraries that
+    read os.environ directly — notably the Google GenAI client used by ADK,
+    which expects GOOGLE_API_KEY in the environment — pick up the same values.
+    """
+    load_dotenv()
     return Settings()
